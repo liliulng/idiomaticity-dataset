@@ -6,8 +6,7 @@ The dataset contains data extracted from the French Lexical Net-work (LN-fr), a 
 
 The original data is downlowadable at https://www.ortolang.fr/market/lexicons/lexical-system-fr/v1?lang=en
 
-
-This dataset comprises five CSV files with a total of 12 columns and 59,092 rows. Below is an explanation of the main information contained in each column:
+This dataset is a TSV file comprising a total of 9 columns and 59,092 rows. Below is an explanation of the main information contained in each column:
 
 - **ID** : id of lexical units (simple lexeme or idioms) in LN-Fr.
 
@@ -17,19 +16,13 @@ This dataset comprises five CSV files with a total of 12 columns and 59,092 rows
 
 - **idiomaticity** : free lexeme, weak idiom, semi-idiom and strong idiom, classification according to Meaning-Text Theory of Igor Mel'čuk, the related paper in listed in the references.
 
-- **token** : token to be masked. For free lexemes, the token masked is the lexeme itself. For idioms, idioms are seperated by space and punctuations then every of their tokens.
+- **token** : token to be masked. For free lexemes, the masked token is the lexeme itself. For idioms, idioms are seperated by space and punctuations then every of their tokens are masked one at a time.
 
 - **token_POS** : part of speech of the masked token 
 
-- **sentence**: example sentence 
+- **sentence**: example sentence with the token masked, replaced by "\<mask\>". Some tokens are tokenized by CamemBERT Tokenizer as several subtokens, each subtoken is masked one at a time.
 
-- **sentence_tokens** : list of tokens obtained by tokenizing sentence with CamemBERT Tokenizer.
-
-- **subtoken_index** : index of subtokens of token in "sentence_tokens". Some tokens are tokenized as several subtokens.
-
-- **sentence_tokens_masked** : list of tokens of sentence where tokens or subtokens of tokens are masked, replaced by index for "\<mask\>" : 32004.
-
-- **token_score** : prediction score returned for the correct prediction (prediction same as the masked token).
+- **token_score** : prediction score returned for the correct prediction (prediction same as the masked token). For tokens tokenized as subtokens, their prediction score is the product of their subtokens' scores.
 
 - **R1** : binary value, True or False, indicating wether the correct prediction is the best prediction, the first prediction returned, the prediction at rank 1 (R1). This represents a high confidence of CamemBERT for this prediction.
 
