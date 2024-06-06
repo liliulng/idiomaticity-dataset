@@ -23,7 +23,7 @@ This dataset is a TSV file comprising a total of 9 columns and 59,092 rows. Belo
 
 If you use this dataset, please cite this paper:
 
-Li Liu and Francois Lareau. 2024. Assessing BERT’s sensitivity to idiomaticity. In *Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD) @ LREC-COLING 2024*, pages 14–23, Torino, Italia. ELRA and ICCL.
+Li Liu and Francois Lareau. 2024. [Assessing BERT’s sensitivity to idiomaticity](https://aclanthology.org/2024.mwe-1.4). In *Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD) @ LREC-COLING 2024*, pages 14–23, Torino, Italia. ELRA and ICCL.
 
 ## References
 
